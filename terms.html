@@ -1,407 +1,594 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Terms and Conditions - ZippyMap</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" href="icon.png" type="image/png">
+    <meta name="description" content="ZippyMap Terms and Conditions: Legal terms governing your use of our platform for connecting with nearby service providers.">
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0061A4",
+              "on-primary": "#FFFFFF",
+              "primary-container": "#D1E4FF",
+              "on-primary-container": "#001D36",
+              "secondary": "#535F70",
+              "secondary-container": "#D7E3F7",
+              "on-secondary-container": "#101C2B",
+              "tertiary-container": "#CBE6FF",
+              "background": "#FDFCFF",
+              "surface": "#FDFCFF",
+              "surface-container": "#F0F4F9",
+              "surface-container-high": "#E7E8EE",
+              "on-surface": "#1A1C1E",
+              "surface-variant": "#E1E2E6",
+              "on-surface-variant": "#44474E",
+              "outline": "#74777F",
+              "outline-variant": "#C4C7C5",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.75rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "2xl": "2rem",
+              "3xl": "2.5rem",
+              "full": "9999px"
+            },
+            boxShadow: {
+              'elevation-1': '0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1)',
+              'elevation-2': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              'elevation-3': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              'glow': '0 0 15px rgba(0, 97, 164, 0.3)',
+            }
+          },
+        },
+      }
+    </script>
     <style>
-        :root {
-            --primary: #1a73e8;
-            --surface: #ffffff;
-            --background: #f8f9fa;
-            --on-surface: #202124;
-            --on-surface-secondary: #5f6368;
-            --border: #dadce0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Google Sans', Roboto, Arial, sans-serif;
-            line-height: 1.5;
-            color: var(--on-surface);
-            background: var(--background);
-            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
-        
-        header {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 0;
-            position: sticky;
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Terms content styling */
+        .terms-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1A1C1E;
+            line-height: 1.3;
+        }
+        .terms-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: #1A1C1E;
+            line-height: 1.4;
+        }
+        .terms-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+            color: #44474E;
+        }
+        .terms-content ul, .terms-content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.75rem;
+        }
+        .terms-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: #44474E;
+        }
+        .terms-content strong {
+            font-weight: 600;
+            color: #1A1C1E;
+        }
+        .terms-content a {
+            color: #0061A4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .terms-content a:hover {
+            text-decoration: underline;
+        }
+        /* Smooth fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
             z-index: 100;
+            padding: 0;
+            overflow-y: auto;
         }
-        
-        .header-content {
+        .mobile-menu.active {
+            display: block;
+        }
+        .mobile-menu-content {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 320px;
+            height: 100vh;
+            background: white;
+            padding: 30px 20px;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+        }
+        .mobile-menu.active .mobile-menu-content {
+            transform: translateX(0);
+        }
+        .mobile-menu-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E1E2E6;
         }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            margin-left: 50px;
-        }
-        
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-        }
-        
-        .logo-text {
-            font-size: 22px;
-            font-weight: 500;
-            color: var(--on-surface);
-        }
-        
-        .mobile-menu-btn {
+        .mobile-menu-close {
             background: none;
             border: none;
-            color: var(--on-surface-secondary);
-            cursor: pointer;
             padding: 8px;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-        
-        .mobile-menu-btn:hover {
-            background: rgba(0,0,0,0.05);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--on-surface-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 6px;
-            transition: all 0.2s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-            background: rgba(26, 115, 232, 0.05);
-        }
-        
-        .nav-links a.active {
-            color: var(--primary);
-            background: rgba(26, 115, 232, 0.1);
-        }
-        
-        .content-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px;
-            margin: 40px auto;
-            max-width: 800px;
-        }
-        
-        h1 {
-            font-size: clamp(28px, 4vw, 32px);
-            font-weight: 400;
-            margin-bottom: 24px;
-            color: var(--on-surface);
-        }
-        
-        h3 {
-            font-size: clamp(18px, 2.5vw, 20px);
-            font-weight: 500;
-            margin: 32px 0 16px;
-            color: var(--on-surface);
-        }
-        
-        p {
-            color: var(--on-surface-secondary);
-            margin-bottom: 16px;
-            line-height: 1.6;
-            font-size: 15px;
-        }
-        
-        .info-section {
-            margin-bottom: 32px;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 16px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--primary);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            border: none;
             cursor: pointer;
-            transition: all 0.2s;
+            color: #44474E;
         }
-        
-        .back-link:hover {
-            background: #1557b0;
-            transform: translateY(-2px);
-        }
-        
-        .play-store-icon {
-            width: 20px;
-            height: 20px;
-        }
-        
-        .last-updated {
-            color: var(--on-surface-secondary);
-            font-size: 14px;
-            font-style: italic;
-            margin-top: 32px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-        }
-        
-        footer {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            padding: 48px 0 32px;
-            margin-top: 60px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-        
-        .footer-links a {
-            color: var(--on-surface-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            padding: 4px 0;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-        
-        .copyright {
-            text-align: center;
-            color: var(--on-surface-secondary);
-            font-size: 13px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-            
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--surface);
-                flex-direction: column;
-                padding: 16px;
-                border-bottom: 1px solid var(--border);
-                box-shadow: var(--shadow);
-                border-radius: 0 0 12px 12px;
-                gap: 8px;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links a {
-                width: 100%;
-                padding: 12px 16px;
-            }
-            
-            .content-card {
-                padding: 24px;
-                margin: 32px auto;
-            }
-            
-            .action-buttons {
-                flex-direction: column;
-            }
-            
-            .back-link {
-                justify-content: center;
-            }
-            
-            .footer-links {
-                justify-content: flex-start;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .footer-links {
-                flex-direction: column;
-                gap: 16px;
-            }
-        }
-        
-        @media (min-width: 769px) {
-            .mobile-menu-btn {
-                display: none;
-            }
+        .mobile-menu-close:hover {
+            background: #F0F4F9;
+            border-radius: 50%;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container header-content">
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            
-            <a href="index.html" class="logo-container">
-                <img src="icon.png" alt="ZippyMap" class="logo-img">
-                <div class="logo-text">ZippyMap</div>
-            </a>
-            
-            <div class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html" class="active">Terms</a>
-                <a href="refund.html">Refund</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <div class="content-card">
-            <h1>Terms and Conditions</h1>
-            <p>Welcome to ZippyMap. By using our App or Website (https://zippymap.in/), you agree to these terms.</p>
-            
-            <div class="info-section">
-                <h3>1. Agreement to Terms</h3>
-                <p>By accessing ZippyMap, you agree to be bound by these Terms. If you disagree with any part, you may not use the Service.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>2. User Responsibilities</h3>
-                <p>Users must provide accurate information via Google Sign-In. Service Providers are responsible for the services they provide and the accuracy of their shared location.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>3. Limitation of Liability</h3>
-                <p>The Developer provides a platform for connection. The Developer is not responsible for any direct or indirect interactions, transactions, or disputes between Users and Service Providers.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>4. Account Termination</h3>
-                <p>We reserve the right to suspend or terminate accounts that violate community standards or engage in fraudulent activities.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>5. Service Availability</h3>
-                <p>ZippyMap may be unavailable due to maintenance or technical issues. We do not guarantee uninterrupted service availability.</p>
-            </div>
-
-            <p class="last-updated">Last updated: January 6, 2026</p>
-            
-            <div class="action-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.zippymap.app&pcampaignid=web_share" 
-                   target="_blank" 
-                   class="back-link">
-                    <svg class="play-store-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
-                    </svg>
-                    Download App
-                </a>
-                <a href="index.html" class="back-link" style="background: var(--on-surface-secondary);">
-                    ← Back to Home
+<body class="bg-background text-on-surface overflow-x-hidden flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 w-full border-b border-surface-variant/40 bg-background/95 backdrop-blur-md transition-all">
+        <div class="mx-auto flex h-20 max-w-5xl items-center justify-between px-6 lg:px-8">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-container text-primary shadow-sm overflow-hidden">
+                        <img src="icon.png" alt="ZippyMap Logo" class="h-full w-full object-cover">
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-on-surface">ZippyMap</span>
                 </a>
             </div>
+            <div class="hidden md:flex items-center gap-2">
+                <a class="rounded-full px-5 py-2.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="index.html">Home</a>
+                <a class="rounded-full px-5 py-2.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="about.html">About & Contact Us</a>
+                <a class="rounded-full px-5 py-2.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="privacy.html">Privacy Policy</a>
+                <a class="rounded-full px-5 py-2.5 text-sm font-medium bg-surface-container text-primary font-semibold transition-colors" href="terms.html">Terms</a>
+                <a class="rounded-full px-5 py-2.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="refund.html">Refund Policy</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://play.google.com/store/apps/details?id=com.zippymap.app&pcampaignid=web_share" class="hidden sm:flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-medium text-on-primary shadow-elevation-1 transition-all active:scale-95 hover:shadow-elevation-2 hover:bg-primary/90">
+                    Get App
+                </a>
+                <button id="mobileMenuButton" class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container rounded-full">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
         </div>
+    </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-container text-primary overflow-hidden">
+                        <img src="icon.png" alt="ZippyMap Logo" class="h-full w-full object-cover">
+                    </div>
+                    <span class="text-xl font-bold text-on-surface">ZippyMap</span>
+                </div>
+                <button id="mobileMenuClose" class="mobile-menu-close">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <div class="flex flex-col space-y-3">
+                <a class="rounded-lg px-5 py-4 text-base font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-3" href="index.html">
+                    <span class="material-symbols-outlined">home</span>
+                    Home
+                </a>
+                <a class="rounded-lg px-5 py-4 text-base font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-3" href="about.html">
+                    <span class="material-symbols-outlined">info</span>
+                    About & Contact Us
+                </a>
+                <a class="rounded-lg px-5 py-4 text-base font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-3" href="privacy.html">
+                    <span class="material-symbols-outlined">privacy_tip</span>
+                    Privacy Policy
+                </a>
+                <a class="rounded-lg px-5 py-4 text-base font-medium bg-surface-container text-primary font-semibold transition-colors flex items-center gap-3" href="terms.html">
+                    <span class="material-symbols-outlined">gavel</span>
+                    Terms & Conditions
+                </a>
+                <a class="rounded-lg px-5 py-4 text-base font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-3" href="refund.html">
+                    <span class="material-symbols-outlined">currency_exchange</span>
+                    Refund Policy
+                </a>
+            </div>
+            
+            <!-- Social Media in Mobile Menu -->
+            <div class="mt-8 pt-8 border-t border-surface-variant/30">
+                <p class="text-sm font-medium text-on-surface-variant mb-4 px-2">Follow Us</p>
+                <div class="flex gap-4 px-2">
+                    <a class="h-10 w-10 rounded-full bg-surface flex items-center justify-center text-primary border border-surface-variant hover:bg-surface-container hover:border-primary/30 transition-colors" href="https://t.me/ZippyMap" target="_blank" aria-label="Telegram">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.06-.2-.07-.06-.17-.04-.24-.02-.1.02-1.79 1.14-5.06 3.34-.48.33-.91.5-1.3.49-.43-.01-1.27-.25-1.89-.45-.76-.25-1.37-.38-1.32-.8.03-.24.33-.49.91-.74 3.57-1.55 5.94-2.58 7.14-3.19 3.25-1.67 3.93-1.96 4.36-1.97.1 0 .32.02.46.14.11.1.14.23.16.33.02.1.02.32-.01.5z"/>
+                        </svg>
+                    </a>
+                    <a class="h-10 w-10 rounded-full bg-surface flex items-center justify-center text-primary border border-surface-variant hover:bg-surface-container hover:border-primary/30 transition-colors" href="https://www.youtube.com/@zippymap" target="_blank" aria-label="YouTube">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.67 8.12c-.22-.86-.89-1.53-1.75-1.75C16.19 6 12 6 12 6s-4.19 0-5.92.37c-.86.22-1.53.89-1.75 1.75C4 9.81 4 12 4 12s0 2.19.33 3.88c.22.86.89 1.53 1.75 1.75C7.81 18 12 18 12 18s4.19 0 5.92-.37c.86-.22 1.53-.89 1.75-1.75C20 14.19 20 12 20 12s0-2.19-.33-3.88zM10 15V9l5.19 3L10 15z"/>
+                        </svg>
+                    </a>
+                    <a class="h-10 w-10 rounded-full bg-surface flex items-center justify-center text-primary border border-surface-variant hover:bg-surface-container hover:border-primary/30 transition-colors" href="https://play.google.com/store/apps/details?id=com.zippymap.app&pcampaignid=web_share" target="_blank" aria-label="Google Play">
+                        <span class="material-symbols-outlined">android</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="download" class="relative flex w-full justify-center pt-24 pb-16 lg:pt-32 lg:pb-24 px-6 sm:px-8 overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -z-10 h-[800px] w-[800px] rounded-full bg-gradient-radial from-primary-container/40 to-transparent blur-3xl opacity-60 pointer-events-none"></div>
+            <div class="max-w-4xl w-full flex flex-col items-start text-left gap-10">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-on-surface max-w-3xl">
+                    Terms & 
+                    <span class="text-primary relative inline-block px-2">
+                        Conditions
+                        <svg class="absolute w-full h-3 bottom-1 left-0 text-primary-container -z-10 opacity-60" fill="currentColor" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 15 Q 50 25 100 15 T 200 15" stroke="currentColor" stroke-width="8"></path>
+                        </svg>
+                    </span>
+                </h1>
+                <p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl font-normal">
+                    Please read these terms carefully before using ZippyMap. By accessing our platform, you agree to be bound by these terms.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="privacy.html" class="flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-bold shadow-elevation-2 hover:shadow-elevation-3 hover:bg-primary/90 transition-all active:scale-95 text-lg">
+                        <span class="material-symbols-outlined icon-filled text-2xl">privacy_tip</span>
+                        View Privacy Policy
+                    </a>
+                    <a href="index.html" class="flex items-center gap-3 bg-surface text-on-surface px-8 py-4 rounded-full font-bold shadow-elevation-1 hover:shadow-elevation-2 hover:bg-surface-container transition-all active:scale-95 text-lg border border-surface-variant">
+                        <span class="material-symbols-outlined text-2xl">home</span>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Summary Cards -->
+        <section class="w-full bg-surface-container/50 py-16 px-6 sm:px-8 mb-12">
+            <div class="mx-auto max-w-5xl flex flex-col gap-12">
+                <div class="flex flex-col gap-4 max-w-2xl text-left">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-on-surface tracking-tight">Key Points to Know</h2>
+                    <p class="text-on-surface-variant text-lg leading-relaxed">Important highlights from our Terms and Conditions</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="group relative flex flex-col gap-5 rounded-[2rem] bg-surface p-8 transition-all duration-300 hover:shadow-lg border border-transparent hover:border-outline-variant/20">
+                        <div class="h-14 w-14 rounded-2xl bg-tertiary-container/40 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">gavel</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-on-surface mb-2">Legal Agreement</h3>
+                            <p class="text-on-surface-variant leading-relaxed text-sm">By using ZippyMap, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+                        </div>
+                    </div>
+                    <div class="group relative flex flex-col gap-5 rounded-[2rem] bg-surface p-8 transition-all duration-300 hover:shadow-lg border border-transparent hover:border-outline-variant/20">
+                        <div class="h-14 w-14 rounded-2xl bg-tertiary-container/40 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">shield_person</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-on-surface mb-2">User Responsibilities</h3>
+                            <p class="text-on-surface-variant leading-relaxed text-sm">All users must provide accurate information via Google Sign-In and follow community guidelines.</p>
+                        </div>
+                    </div>
+                    <div class="group relative flex flex-col gap-5 rounded-[2rem] bg-surface p-8 transition-all duration-300 hover:shadow-lg border border-transparent hover:border-outline-variant/20">
+                        <div class="h-14 w-14 rounded-2xl bg-tertiary-container/40 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">balance</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-on-surface mb-2">Limitation of Liability</h3>
+                            <p class="text-on-surface-variant leading-relaxed text-sm">ZippyMap acts as an intermediary and is not responsible for interactions between users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Terms Content -->
+        <section class="w-full py-16 px-6 sm:px-8">
+            <div class="mx-auto max-w-5xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-on-surface tracking-tight mb-4">Complete Terms & Conditions</h2>
+                    <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Detailed legal terms governing your use of ZippyMap</p>
+                </div>
+                
+                <div class="bg-surface rounded-3xl p-8 shadow-elevation-1 border border-surface-variant/20 mb-10 fade-in">
+                    <div class="terms-content">
+                        <!-- Introduction -->
+                        <div class="mb-10 pb-8 border-b border-surface-variant/20">
+                            <h2 class="text-3xl sm:text-4xl font-bold text-on-surface mb-6">Welcome to ZippyMap</h2>
+                            <div class="bg-surface-container/30 rounded-2xl p-6 border border-surface-variant/20">
+                                <p class="text-on-surface-variant leading-relaxed">
+                                    Welcome to ZippyMap. By using our App or Website (<a href="https://zippymap.in/">https://zippymap.in/</a>), you agree to these terms.
+                                </p>
+                                <p class="text-on-surface-variant mt-4 leading-relaxed">
+                                    These Terms and Conditions ("Terms") govern your access to and use of ZippyMap's services, including our mobile application and website. Please read them carefully.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Agreement to Terms -->
+                        <div class="mb-10 pb-8 border-b border-surface-variant/20">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="h-8 w-8 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-lg">check_circle</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-on-surface">1. Agreement to Terms</h3>
+                            </div>
+                            <p>By accessing or using ZippyMap, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you disagree with any part of these terms, you may not access or use the Service.</p>
+                            <p class="mt-4">These Terms constitute a legally binding agreement between you and The Developer. Your continued use of ZippyMap after any changes to these Terms constitutes your acceptance of the revised terms.</p>
+                        </div>
+
+                        <!-- User Responsibilities -->
+                        <div class="mb-10 pb-8 border-b border-surface-variant/20">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="h-8 w-8 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-lg">person</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-on-surface">2. User Responsibilities</h3>
+                            </div>
+                            
+                            <div class="bg-surface-container/20 rounded-2xl p-5 mb-6">
+                                <h4 class="text-xl font-semibold text-on-surface mb-3">Account Accuracy</h4>
+                                <p>All users must provide <strong>accurate information</strong> via Google Sign-In. You are responsible for maintaining the confidentiality of your account credentials.</p>
+                            </div>
+                            
+                            <div class="bg-surface-container/20 rounded-2xl p-5 mb-6">
+                                <h4 class="text-xl font-semibold text-on-surface mb-3">Service Providers</h4>
+                                <p>Service Providers are responsible for the <strong>quality of services</strong> they provide and the <strong>accuracy of their shared location</strong> when active on the platform.</p>
+                            </div>
+                            
+                            <div class="bg-surface-container/20 rounded-2xl p-5">
+                                <h4 class="text-xl font-semibold text-on-surface mb-3">Prohibited Activities</h4>
+                                <p>Users must not engage in fraudulent activities, provide false information, harass other users, or use the platform for any illegal purposes. Violations may result in immediate account termination.</p>
+                            </div>
+                        </div>
+
+                        <!-- Limitation of Liability -->
+                        <div class="mb-10 pb-8 border-b border-surface-variant/20">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="h-8 w-8 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-lg">warning</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-on-surface">3. Limitation of Liability</h3>
+                            </div>
+                            
+                            <p>The Developer provides a platform for connection between users seeking services and service providers offering those services. The Developer acts as an intermediary and is not a party to any agreements or transactions between users.</p>
+                            
+                            <p class="mt-4">The Developer is <strong>not responsible</strong> for any direct or indirect interactions, transactions, or disputes between Users and Service Providers. Users interact at their own risk and should exercise appropriate caution.</p>
+                            
+                            <div class="bg-primary-container/20 rounded-2xl p-5 border border-primary-container/30 mt-6">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="material-symbols-outlined text-primary">info</span>
+                                    <h4 class="font-semibold text-on-surface text-lg">Important Disclaimer</h4>
+                                </div>
+                                <p class="text-on-surface-variant">ZippyMap does not endorse, guarantee, or warrant the quality, safety, or legality of services provided by Service Providers. Users are responsible for verifying the credentials and qualifications of Service Providers before engaging their services.</p>
+                            </div>
+                        </div>
+
+                        <!-- Account Termination -->
+                        <div class="mb-10 pb-8 border-b border-surface-variant/20">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="h-8 w-8 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-lg">block</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-on-surface">4. Account Termination</h3>
+                            </div>
+                            
+                            <p>We reserve the right to suspend or terminate accounts that violate community standards, engage in fraudulent activities, or otherwise misuse the platform.</p>
+                            
+                            <p class="mt-4">Grounds for termination may include, but are not limited to: providing false information, harassment of other users, violation of these Terms, or any activity that may harm the platform or its users.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                                <div class="bg-surface-container/20 rounded-2xl p-5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <span class="material-symbols-outlined text-primary">logout</span>
+                                        <h4 class="font-semibold text-on-surface text-lg">User Rights</h4>
+                                    </div>
+                                    <p class="text-on-surface-variant">You may terminate your account at any time through the app settings. Account termination will result in the deletion of your personal data from our active systems.</p>
+                                </div>
+                                
+                                <div class="bg-surface-container/20 rounded-2xl p-5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <span class="material-symbols-outlined text-primary">support_agent</span>
+                                        <h4 class="font-semibold text-on-surface text-lg">Appeal Process</h4>
+                                    </div>
+                                    <p class="text-on-surface-variant">If you believe your account was terminated in error, you may contact us at <a href="mailto:zippymap.team@gmail.com">zippymap.team@gmail.com</a> to appeal the decision.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Intellectual Property -->
+                        <div class="mb-10 pb-8 border-b border-surface-variant/20">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="h-8 w-8 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-lg">copyright</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-on-surface">5. Intellectual Property</h3>
+                            </div>
+                            <p>All content, features, and functionality of ZippyMap are owned by The Developer and are protected by international copyright, trademark, and other intellectual property laws.</p>
+                        </div>
+
+                        <!-- Governing Law -->
+                        <div class="mb-10 pb-8 border-b border-surface-variant/20">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="h-8 w-8 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-lg">balance</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-on-surface">6. Governing Law</h3>
+                            </div>
+                            <p>These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="mb-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="h-8 w-8 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-lg">mail</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-on-surface">7. Contact Information</h3>
+                            </div>
+                            <p>For questions about these Terms, please contact us at <a href="mailto:zippymap.team@gmail.com">zippymap.team@gmail.com</a> or at our address in Malappuram, Kerala, India.</p>
+                        </div>
+
+                        <!-- Last Updated & Navigation -->
+                        <div class="mt-12 pt-8 border-t border-surface-variant/30">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                                <div>
+                                    <p class="text-on-surface-variant italic"><strong>Last updated:</strong> January 6, 2026</p>
+                                    <p class="text-sm text-on-surface-variant/70 mt-2">These Terms are effective as of the date above. We reserve the right to modify these Terms at any time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Section -->
+                <section class="w-full bg-primary/5 py-16 px-6 sm:px-8 rounded-3xl mt-8">
+                    <div class="mx-auto max-w-4xl text-center">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-on-surface tracking-tight mb-6">Need More Information?</h2>
+                        <p class="text-on-surface-variant text-lg mb-8 max-w-2xl mx-auto">Check our other legal documents or contact us directly for any questions</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="privacy.html" class="flex items-center justify-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-bold shadow-elevation-2 hover:shadow-elevation-3 hover:bg-primary/90 transition-all active:scale-95 text-lg">
+                                <span class="material-symbols-outlined icon-filled text-2xl">privacy_tip</span>
+                                Privacy Policy
+                            </a>
+                            <a href="mailto:zippymap.team@gmail.com" class="flex items-center justify-center gap-3 bg-surface text-on-surface px-8 py-4 rounded-full font-bold shadow-elevation-1 hover:shadow-elevation-2 hover:bg-surface-container transition-all active:scale-95 text-lg border border-surface-variant">
+                                <span class="material-symbols-outlined text-2xl">mail</span>
+                                Contact Legal Team
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About & Contact Us</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms and Conditions</a>
-                    <a href="refund.html">Refund Policy</a>
+    <!-- Footer -->
+    <footer class="w-full bg-white py-12 px-6 sm:px-8 border-t border-surface-variant/30">
+        <div class="mx-auto max-w-5xl">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-container text-primary overflow-hidden">
+                            <img src="icon.png" alt="ZippyMap Logo" class="h-full w-full object-cover">
+                        </div>
+                        <span class="text-xl font-bold text-on-surface">ZippyMap</span>
+                    </a>
                 </div>
-                <p class="copyright">© 2026 ZippyMap • Operated by The Developer</p>
+                <div class="flex flex-col md:flex-row md:items-center md:justify-center gap-6 lg:gap-8">
+                    <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="about.html">About & Contact Us</a>
+                    <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+                    <a class="text-sm font-medium text-primary font-semibold transition-colors" href="terms.html">Terms and Conditions</a>
+                    <a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="refund.html">Refund Policy</a>
+                </div>
+            </div>
+            <div class="border-t border-surface-variant/40 pt-8 flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-6">
+                <p class="text-on-surface-variant/60 text-xs">© 2026 ZippyMap Inc. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a class="h-10 w-10 rounded-full bg-surface flex items-center justify-center text-primary border border-surface-variant hover:bg-surface-container hover:border-primary/30 transition-colors" href="https://t.me/ZippyMap" target="_blank" aria-label="Telegram">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.06-.2-.07-.06-.17-.04-.24-.02-.1.02-1.79 1.14-5.06 3.34-.48.33-.91.5-1.3.49-.43-.01-1.27-.25-1.89-.45-.76-.25-1.37-.38-1.32-.8.03-.24.33-.49.91-.74 3.57-1.55 5.94-2.58 7.14-3.19 3.25-1.67 3.93-1.96 4.36-1.97.1 0 .32.02.46.14.11.1.14.23.16.33.02.1.02.32-.01.5z"/>
+                        </svg>
+                    </a>
+                    <a class="h-10 w-10 rounded-full bg-surface flex items-center justify-center text-primary border border-surface-variant hover:bg-surface-container hover:border-primary/30 transition-colors" href="https://www.youtube.com/@zippymap" target="_blank" aria-label="YouTube">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.67 8.12c-.22-.86-.89-1.53-1.75-1.75C16.19 6 12 6 12 6s-4.19 0-5.92.37c-.86.22-1.53.89-1.75 1.75C4 9.81 4 12 4 12s0 2.19.33 3.88c.22.86.89 1.53 1.75 1.75C7.81 18 12 18 12 18s4.19 0 5.92-.37c.86-.22 1.53-.89 1.75-1.75C20 14.19 20 12 20 12s0-2.19-.33-3.88zM10 15V9l5.19 3L10 15z"/>
+                        </svg>
+                    </a>
+                    <a class="h-10 w-10 rounded-full bg-surface flex items-center justify-center text-primary border border-surface-variant hover:bg-surface-container hover:border-primary/30 transition-colors" href="https://play.google.com/store/apps/details?id=com.zippymap.app&pcampaignid=web_share" target="_blank" aria-label="Google Play">
+                        <span class="material-symbols-outlined">android</span>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Mobile Menu Script -->
     <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        document.addEventListener('click', (event) => {
-            if (!event.target.closest('.header-content') && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
-        
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            
+            // Open menu
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close menu
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Close menu when clicking on backdrop
+            mobileMenu.addEventListener('click', function(event) {
+                if (event.target === mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Close menu when pressing Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             });
         });
     </script>
