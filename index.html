@@ -3,44 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZippyMap - Get Help Nearby</title>
+    <title>ZippyMap • Get Help Nearby</title>
+    <link rel="icon" type="image/png" href="icon.png">
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; color: #333; }
-        header, section, footer { padding: 40px; max-width: 900px; margin: auto; }
-        .hero { background: #f4f4f4; text-align: center; border-radius: 10px; margin-top: 20px; }
-        .footer-links { text-align: center; border-top: 1px solid #ccc; padding-top: 20px; }
-        .footer-links a { margin: 0 10px; text-decoration: none; color: #007bff; font-weight: bold; }
-        .btn { background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+        :root {
+            --primary: #1877F2; /* Facebook blue */
+            --surface: #FFFFFF;
+            --background: #FAFBFC;
+            --text: #1C1E21;
+            --text-light: #65676B;
+            --border: #E4E6EB;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--background);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+        
+        nav {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+            background: rgba(24, 119, 242, 0.05);
+        }
+        
+        nav a.active {
+            color: var(--primary);
+            background: rgba(24, 119, 242, 0.1);
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        
+        .mobile-menu:hover {
+            background: rgba(0,0,0,0.05);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero p {
+            font-size: clamp(16px, 2vw, 18px);
+            color: var(--text-light);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #166FE5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.2);
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section-title {
+            font-size: clamp(28px, 4vw, 32px);
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature {
+            padding: 32px;
+            background: var(--background);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        
+        .feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .feature h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .feature p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 60px 0 40px;
+            background: var(--surface);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            background: rgba(24, 119, 242, 0.05);
+        }
+        
+        .copyright {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .mobile-menu {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--surface);
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                display: none;
+                gap: 8px;
+                z-index: 99;
+            }
+            
+            nav.active {
+                display: flex;
+            }
+            
+            nav a {
+                width: 100%;
+                padding: 12px 16px;
+                text-align: center;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .features {
+                padding: 60px 0;
+            }
+            
+            .feature {
+                padding: 24px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 24px;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 24px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-menu {
+                display: none;
+            }
+            
+            nav {
+                display: flex !important;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>ZippyMap</h1>
-        <p><strong>Community clarity. Real-time discovery.</strong></p>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="icon.png" alt="ZippyMap" class="logo-img">
+                ZippyMap
+            </a>
+            
+            <button class="mobile-menu" id="menuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            
+            <nav id="nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="refund.html">Refund</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h2>Get Help Nearby</h2>
-        <p>Connect with trusted local providers instantly through our community-driven platform.</p>
-        <br>
-        <a href="#" class="btn">Download on Google Play</a>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Get Help Nearby</h1>
+                <p>Connect with trusted local providers instantly through our community-driven platform. Find help when you need it most.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.zippymap.app" 
+                   target="_blank" 
+                   class="cta-button">
+                    <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                        <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
+                    </svg>
+                    Download on Google Play
+                </a>
+            </div>
+        </section>
 
-    <section>
-        <h3>Real-Time Discovery</h3>
-        <p>Instantly identify service providers around you. Our high-precision location engine shows you who's available in your immediate vicinity right now.</p>
-        
-        <h3>Community Clarity</h3>
-        <p>Connect with confidence using honest ratings and reviews from your local peers. No more guessing—just transparent feedback from your neighborhood.</p>
-    </section>
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">📍</div>
+                        <h3>Real-Time Discovery</h3>
+                        <p>Instantly identify service providers around you with high-precision location.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⭐</div>
+                        <h3>Community Clarity</h3>
+                        <p>Connect with confidence using honest ratings and reviews from local peers.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Connection</h3>
+                        <p>Direct contact with verified providers ensures quick response times.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer class="footer-links">
-        <a href="index.html">Home</a> | 
-        <a href="about.html">About & Contact Us</a> | 
-        <a href="privacy.html">Privacy Policy</a> | 
-        <a href="terms.html">Terms and Conditions</a> | 
-        <a href="refund.html">Refund Policy</a>
-        <p><br>© 2026 ZippyMap • Operated by The Developer</p>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© 2026 ZippyMap • Operated by The Developer</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="refund.html">Refund</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const nav = document.getElementById('nav');
+        
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' : 
+                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && !e.target.closest('.mobile-menu') && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                menuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+            }
+        });
+        
+        // Close menu when clicking on links
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+            });
+        });
+    </script>
 </body>
 </html>
