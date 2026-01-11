@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /refund.html
+
+Sitemap: https://zippymap.in/sitemap.xml
